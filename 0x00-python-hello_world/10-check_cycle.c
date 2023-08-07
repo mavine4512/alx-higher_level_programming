@@ -6,7 +6,7 @@ include "lists.h"
  *
  * Return: 0 on success, 1 on failure
  */
-int check_cycle(listint_t list)
+int check_cycle(listint_t *list)
 {
 	listint_t *slow = list;
 	listint_t *fast = list;
