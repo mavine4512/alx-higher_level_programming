@@ -4,3 +4,4 @@ def magic_calculation(a, b):
 
 # import dis
 # print(dis.dis(magic_calculation))
+
