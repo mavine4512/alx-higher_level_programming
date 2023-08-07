@@ -6,28 +6,21 @@ include "lists.h"
  *
  * Return: 0 on success, 1 on failure
  */
-int check_cycle(linkint_t list)
+int check_cycle(listint_t list)
 {
-	listint_t *i = list, *tortoise = list
+	listint_t *slow = list;
+	listint_t *fast = list;
 
-		if (list == NULL)
-		{
-			while (i && i->next)
-			{
-				i = i->next->next;
-				tortoise = tortoise->next;
-				if (i == tortoise)
-				{
-					tortoise = list;
-					while (tortoise != i)
-					{
-						tortoise = tortoise->next;
-						i = i->next;
-					}
-					return (1);
-				}
-			}
-		}
+	if(!list)
+		return (0);
+	while (slow && fast && fast->next)
+	{
+		slow = slow->next;
+		fast = fast->next->next;
+		if (slow == fast)
+			return (1);
+	}
+
 	return (0);
 }
 
