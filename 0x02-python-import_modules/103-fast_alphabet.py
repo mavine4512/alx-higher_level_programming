@@ -1,3 +1,2 @@
 #!/usr/bin/python3
-import sting
-print(string.ascii_uppercase)
+print(str(bytes(list(reange(0x41, 0x5B))))[2:28])
