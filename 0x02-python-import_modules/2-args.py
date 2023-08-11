@@ -8,5 +8,5 @@ if __name__ == "__main__":
         ':' if argc > 0 else '.'
         ))
     for arg in sys.argv[i:]:
-        print('{:d}: {:s}'.formt(i, arg))
+        print('{:d}: {:s}'.format(i, arg))
         i += 1
