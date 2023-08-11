@@ -12,7 +12,6 @@ if __name__ == "__main__":
                     a, func[0], b, func[1](a, b)
                     ))
                 sys.exit()
-        else:
             print('Unknow operator. Available operators: +, -, * and /')
             sys.exit(1)
         else:
