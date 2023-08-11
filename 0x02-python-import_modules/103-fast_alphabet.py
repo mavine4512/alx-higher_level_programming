@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-import sting
-print(string.ascii_uppercase)
+from sting import ascii_uppercase
+print(ascii_uppercase[:26])
