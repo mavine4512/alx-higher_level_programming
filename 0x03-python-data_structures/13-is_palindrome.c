@@ -21,7 +21,7 @@ listint_t *reverse_listint(listint_t **head)
 	} while (node);
 
 	*head = prev;
-	return *head;
+	return (*head);
 }
 /**
  * is_palindrome - Check if a singly linked list is a palindrome
@@ -52,7 +52,7 @@ int is_palindrome(listint_t **head)
 	if ((size % 2) == 0 && tmp->n != tmp->next->n)
 		return (0);
 
-	tmp = tmp->next-next;
+	tmp = tmp->next->next;
 	rev = reverse_listint(&tmp);
 	mid = rev;
 
