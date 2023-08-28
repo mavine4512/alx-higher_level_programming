@@ -19,7 +19,7 @@ void print_python_float(PyObject *p)
 		return;
 	}
 	value = ((PyFloatObject *)p)->ob_fval;
-	string = PyOS_double_to_string(value, 'r', 0, Py_DTSF_ADD_DOT_O, NULL);
+	string = PyOS_double_to_string(value, 'r', 0, Py_DTSF_ADD_DOT_0, NULL);
 	printf(" value: %s\n", string);
 }
 /**
@@ -33,7 +33,6 @@ void print_python_bytes(PyObject *p)
 
 	fflush(stdout);
 	printf("[.] bytes object info\n");
-
 	if (!PyBytes_CheckExact(p))
 	{
 		printf(" [ERROR] Invalid Bytes object\n");
