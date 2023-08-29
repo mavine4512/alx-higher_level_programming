@@ -62,7 +62,7 @@ class SinglyLinkedList:
             new.next_node = None
             self.__head = new
         elif self.__head.data > value:
-            new.new_node = self.__head
+            new.next_node = self.__head
             self.__head = new
         else:
             tmp = self.__head

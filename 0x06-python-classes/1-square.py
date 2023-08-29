@@ -3,7 +3,7 @@
 '''
 
 
-class Spuare:
+class Square:
     '''Represent a square.
     '''
 
