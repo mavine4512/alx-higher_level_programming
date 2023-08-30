@@ -33,7 +33,7 @@ class Square:
     def position(self):
         '''Get/set the current size of the square.
         '''
-        return (self.__size)
+        return (self.__position)
 
     @position.setter
     def position(self, value):
