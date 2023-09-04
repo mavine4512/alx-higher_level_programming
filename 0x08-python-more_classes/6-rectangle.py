@@ -7,7 +7,7 @@ class Rectangle:
     '''this represent a rectangle
     '''
     number_of_instances = 0
-    
+
     def __init__(self, width=0, height=0):
         '''Initializing rectangle class
         Args:
@@ -74,10 +74,10 @@ class Rectangle:
             if column < self.__height - 1:
                 rectangle += "\n"
         return (rectangle)
-    
+
     def __repr__(self):
         return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
-    
+
     def __del__(self):
         '''prints a message for every object that is deleted.
         '''
