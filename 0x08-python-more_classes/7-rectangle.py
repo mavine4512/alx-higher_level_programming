@@ -78,13 +78,12 @@ class Rectangle:
             if column < self.__height - 1:
                 rectangle += "\n"
         return (rectangle)
-    
+
     def __repr__(self):
         return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
-    
+
     def __del__(self):
         '''prints a message for every object that is deleted.
         '''
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
-
