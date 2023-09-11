@@ -4,7 +4,6 @@
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
-
 class Rectangle(BaseGeometry):
     '''Represents a geometry object.
     '''
@@ -27,5 +26,5 @@ class Rectangle(BaseGeometry):
         '''returns the print() and str() representataion of a rectangle
         '''
         string = "[" + str(self.__class__.__name__) + "] "
-        string += str(self.__width) + "/" + str( self.__height)
+        string += str(self.__width) + "/" + str(self.__height)
         return string
