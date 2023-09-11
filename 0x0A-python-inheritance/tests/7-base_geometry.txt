@@ -1,0 +1,34 @@
+Importing the function from the module
+	>>> BG = __import__('7-base_geometry').BaseGeometry
+
+Checking for module doctoring
+	>>>  m  =  __import__('7-base_geometry’).__doc__
+	>>> len(m) > 1
+	 True
+
+Checking for class doctoring
+	>>> c  = __import__('7-base_geometry').BaseGeometry.__doc__
+	>>>  len(c) > 1
+ 	True
+
+Checking for method doctoring
+		>>> mod1   = __import__('7-base_geometry').BaseGeometry.area.__doc__
+		>>>  len(mod1) > 1
+ 		True
+		>>> mod2   = __import__(‘7-base_geometry').BaseGeometry.integer_validator.__doc__
+		>>>  len(mod2) > 1
+ 		True
+
+Checking for area failure
+		>>> b = BG()
+		>>> b.area()
+		TraceBack (most recent call last):
+		…
+		Exception: area() is not implimented
+
+Checking for too many arguments for area
+		>>> b.area(1)
+		TraceBack (most recent call last):
+		…
+		TypeError:area() takes 1 positional argument but 2 were given
+
