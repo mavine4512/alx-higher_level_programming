@@ -6,4 +6,6 @@ from json import JSONDecoder
 
 
 def from_json_string(my_str):
+    '''Creates an object from its JSON representation
+    '''
     return JSONDecoder().decode(my_str)
