@@ -4,7 +4,7 @@
 >>> say_my_name = import_module('3-say_my_name').say_my_name
 
 # Valid arguments
->>> say_my_nam("Mavine", "Naaman")
+>>> say_my_name("Mavine", "Naaman")
 my name is Mavine Naaman
 
 # Invalid arguments
