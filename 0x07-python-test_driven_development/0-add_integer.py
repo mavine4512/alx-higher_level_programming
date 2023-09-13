@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-'''Contains and add interger function
+'''Contains and add integer function
 '''
 
 
 def add_integer(a, b=98):
-    '''Computes the sum of two intergers.
+    '''Computes the sum of two integers.
     Args:
     a (int): The first number.
     b (int, optional): The second number.
