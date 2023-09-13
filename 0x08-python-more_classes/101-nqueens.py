@@ -66,7 +66,7 @@ def xout(board, row, col):
     for r in range(row - 1, -1, -1):
         if c < 0:
             break
-        board[r][c] = "x"
+        board[r][c]
         c -= 1
 
     c = col + 1
