@@ -5,19 +5,19 @@
 
 # Valid arguments
 >>> say_my_name("Mavine", "Naaman")
-my name is Mavine Naaman
+My name is Mavine Naaman
 
 # Invalid arguments
 >>> try:
 ...	say_my_name("Mavine", 87)
 ... except TypeError as ex:
 ...	print(ex.args[0])
-last_name must be a sting
+last_name must be a string
 >>> try:
 ...     say_my_name(3.14, "Naaman")
 ... except TypeError as ex:
 ...     print(ex.args[0])
-first_name must be a sting
+first_name must be a string
 >>> try:
 ...     say_my_name()
 ... except TypeError as ex:
