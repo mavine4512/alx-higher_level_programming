@@ -66,17 +66,17 @@ div must be a number
 div must be a number
 >>> try:
 ...     matrix_divided([[4, 7]], 0)
-... except TypeError as ex:
+... except ZeroDivisionError as ex:
 ...     print(ex.args[0])
 division by zero
 >>> try:
 ...     matrix_divided([[4, 7]])
-... except TypeError as ex:
+... except Exception as ex:
 ...     print(ex.args[0])
 matrix_divided() missing 1 required positional argument: 'div'
 >>> try:
-...     matrix_divided([[4, 7]])
-... except TypeError as ex:
+...     matrix_divided()
+... except Exception as ex:
 ...     print(ex.args[0])
 matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
 
