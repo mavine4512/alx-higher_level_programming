@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 '''Contains a print_square function for a TDD project.
 '''
+
+
 def print_square(size):
     '''Print a square with the character '#'.
     Args:
