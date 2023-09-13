@@ -33,18 +33,18 @@ b must be an integer
 ...     print(ex.args[0])
 b must be an integer
 >>> try:
-...     add_integer(float('inf'), 4)
-... except TypeError as ex:
+...     add_integer(float('inf'), float('inf'))
+... except Exception as ex:
 ...     print(ex.args[0])
 cannot convert float infinity to integer
 >>> try:
-...     add_integer(float('inf'), float('inf'))
-... except TypeError as ex:
+...     add_integer(float('inf'), 4)
+... except Exception as ex:
 ...     print(ex.args[0])
 cannot convert float infinity to integer
 >>> try:
 ...     add_integer(float('NaN'), 5)
-... except TypeError as ex:
+... except Exception as ex:
 ...     print(ex.args[0])
 cannot convert float NaN to integer
 
