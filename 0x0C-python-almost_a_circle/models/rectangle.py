@@ -29,7 +29,7 @@ class Rectangle(Base):
         Setting private attribute
         '''
         self.setter_validation("width", value)
-        self._width = value
+        self.__width = value
 
     @property
     def height(self):
@@ -59,7 +59,7 @@ class Rectangle(Base):
             setting private attribute
         '''
         self.setter_validation("x", value)
-        self.__x =  value
+        self.__x = value
 
     @property
     def y(self):
@@ -94,7 +94,6 @@ class Rectangle(Base):
         '''
             Update the argumets in class
         '''
-
         if len(args) == 0:
             for key, val in kwargs.items():
                 self.__setattr__(key, val)
@@ -112,10 +111,10 @@ class Rectangle(Base):
         '''
             Return a dictionary representation of the class
         '''
-        return {'x': getattr(self, "x")
-                'y': getattr(self, "y")
-                'id': getattr(self, "id")
-                'height': getattr(self, "height")
+        return {'x': getattr(self, "x"),
+                'y': getattr(self, "y"),
+                'id': getattr(self, "id"),
+                'height': getattr(self, "height"),
                 'width': getattr(self,"width")}
 
     @staticmethod
