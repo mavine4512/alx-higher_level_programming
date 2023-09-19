@@ -32,7 +32,7 @@ class Base:
         Args:
             list_dictionaries (list): A list of dictionaries.
         """
-        if list_dictionaries is None or list_dictionaries = []:
+        if list_dictionaries is None or list_dictionaries == []:
             return "[]"
         return json.dumps(list_dictionaries)
 
@@ -42,7 +42,7 @@ class Base:
         Args:
             list_objs (list): A list of inherited Base instances.
         """
-        filename = cls.__name +".json"
+        filename = cls.__name__ +".json"
         with open(filename, "w") as jsonfile:
             if list_objs is None:
                 jsonfile.write("[]")
@@ -99,7 +99,7 @@ class Base:
         Args:
             list_objs (list): Alist of inherted Base instances.
         """
-        filename = str(cls.__name__) + ".csv"
+        filename = cls.__name__ + ".csv"
         with open(filename, "w", newline="") as csvfile:
             if list_objs is None or list_objs == []:
                 csvfile.write("[]")
@@ -107,7 +107,7 @@ class Base:
                 if cls.__name__ == "Rectangle":
                     fieldanemes = ["id", "width", "height", "x", "y"]
                 else:
-                    fieldNames =  ["id", "size", "x", "y"]
+                    fieldnames =  ["id", "size", "x", "y"]
                 writer =  csv.DictWriter(csvfile, fieldnames=fieldnames)
                 for obj  in list_objs:
                     writer.writerow(obj.to_dictionary())
@@ -127,7 +127,7 @@ class Base:
                     fieldnames = ["id", "width", "height", "x", "y"]
                 else:
                     fieldname = ["id", "size", "x", "y"]
-                list_dicts = csv>DictReader(csvfile, fieldnames=fieldnames)
+                list_dicts = csv.DictReader(csvfile, fieldnames=fieldnames)
                 list_dicts = [dict([k, int(v)] for k, v in d.items())
                         for d in list_dicts]
                 return [cls.create(**d) for d in list_dicts]
@@ -150,7 +150,7 @@ class Base:
         for rect in list_rectangles:
             turt.showturtle()
             turt.up()
-            turt.goto(react.x, rect.y)
+            turt.goto(rect.x, rect.y)
             turt.down()
             for i in range(2):
                 turt.foward(rect.width)

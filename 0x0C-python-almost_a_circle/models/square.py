@@ -79,4 +79,4 @@ class Square(Rectangle):
          Return thr print() and str() representation of Square
         '''
         return "[Square] ({}) {}/{} - {}/{}".format(self.id, self.x self.y,
-                                                    self.width, self.height)
+                                                    self.width)
