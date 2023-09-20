@@ -44,7 +44,7 @@ class Rectangle(Base):
             setting private attribute
         '''
         self.setter_validation("height", value)
-        self.__height =  value
+        self.__height = value
 
     @property
     def x(self):
@@ -74,18 +74,18 @@ class Rectangle(Base):
             setting private attribute
         '''
         self.setter_validation("y", value)
-        self.__y =  value
+        self.__y = value
 
     def area(self):
         '''
             Returns the area of Rectangle
         '''
         return (self.height * self.width)
-    
+
     def display(self):
         """print to stdout"""
         rectangle = ""
-        print("\n" *self.y, end="")
+        print("\n" * self.y, end="")
         for i in range(self.height):
             rectangle += (" " * self.x) + ("#" * self.width) + "\n"
         print(rectangle, end="")
@@ -101,7 +101,7 @@ class Rectangle(Base):
         try:
             self.id = args[0]
             self.width = args[1]
-            self.height =args[2]
+            self.height = args[2]
             self.x = args[3]
             self.y = args[4]
         except IndexError:
@@ -115,7 +115,7 @@ class Rectangle(Base):
                 'y': getattr(self, "y"),
                 'id': getattr(self, "id"),
                 'height': getattr(self, "height"),
-                'width': getattr(self,"width")}
+                'width': getattr(self, "width")}
 
     @staticmethod
     def setter_validation(attribute, value):
@@ -131,5 +131,5 @@ class Rectangle(Base):
         '''
         overwritting the str method
         '''
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x self.y,
-                                                    self.width, self.height)
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y,
+                                                       self.width, self.height)
