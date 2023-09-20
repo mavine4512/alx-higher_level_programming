@@ -35,7 +35,7 @@ class TestBase_instantiation(unittest.TestCase):
         b1 = Base()
         b2 = Base(12)
         b3 = Base()
-        self.assertEqual(b1.id, b3.id -1)
+        self.assertEqual(b1.id, b3.id - 1)
 
     def test_id_public(self):
         b = Base(12)
@@ -102,7 +102,7 @@ class TestBase_to_json_string(unittest.TestCase):
     def test_to_json_string_rectangle_type(self):
         r = Rectangle(10, 7, 2, 8, 6)
         self.assertEqual(str, type(Base.to_json_string([r.to_dictionary()])))
-    
+
     def test_to_json_string_rectangle_one_dict(self):
         r = Rectangle(10, 7, 2, 8, 6)
         self.assertTrue(len(Base.to_json_string([r.to_dictionary()])) == 53)
@@ -145,7 +145,6 @@ class TestBase_to_json_string(unittest.TestCase):
 class TestBase_save_to_file(unittest.TestCase):
     """Unittest for testing save_to_file method of Base class."""
 
-
     @classmethod
     def tearDown(self):
         """Delete any created files."""
@@ -169,7 +168,7 @@ class TestBase_save_to_file(unittest.TestCase):
             self.asserTrue(len(f.read()) == 53)
 
     def test_save_to_file_two_rectangle(self):
-        r1 =  Rectangle(10, 7, 2, 8, 5)
+        r1 = Rectangle(10, 7, 2, 8, 5)
         r2 = Rectangle(2, 4, 1, 2, 3)
         Rectangle.save_to_file([r1, r2])
         with open("Rectangle.json", "r") as f:
@@ -220,7 +219,7 @@ class TestBase_from_json_string(unittest.TestCase):
     """unittest for testing from_json_string methos of Base class."""
 
     def test_from_json_string_type(self):
-        list_input = [{"id": 89, "width": 10, "height": 4,}]
+        list_input = [{"id": 89, "width": 10, "height": 4}]
         json_list_input = Rectangle.to_json_string(list_input)
         list_output = Rectangle.from_json_string(json_list_input)
         self.assertEqual(list, type(list_output))
@@ -340,7 +339,7 @@ class TestBase_load_from_file(unittest.TestCase):
     def test_load_from_file_first_rectangle(self):
         r1 = Rectangle(10, 7, 2, 8, 1)
         r2 = Rectangle(2, 4, 5, 6, 2)
-        Rectangle.save_to_file([r1, r2]) 
+        Rectangle.save_to_file([r1, r2])
         list_rectangles_output = Rectangle.load_from_file()
         self.assertEqual(str(r1), str(list_rectangles_output[0]))
 
@@ -355,7 +354,7 @@ class TestBase_load_from_file(unittest.TestCase):
         r1 = Rectangle(10, 7, 2, 8, 1)
         r2 = Rectangle(2, 4, 5, 6, 2)
         Rectangle.save_to_file([r1, r2])
-        output =  Reactangle.load_from_file()
+        output = Reactangle.load_from_file()
         self.asserTrue(all(type(obj) == Reactangle for obj in output))
 
     def test_load_from_file_first_square(self):
@@ -495,24 +494,24 @@ class TestBase_load_from_file_csv(unittest.TestCase):
         self.assertTrue(all(type(obj) == Rectangle for obj in output))
 
     def test_load_from_file_csv_first_square(self):
-        s1 =  Square(5, 1, 3, 3)
-        s2 =  Square(9, 5, 2, 3)
+        s1 = Square(5, 1, 3, 3)
+        s2 = Square(9, 5, 2, 3)
         Square.save_to_file_csv([s1, s2])
-        list_squares_output =  Square.load_from_file_csv()
+        list_squares_output = Square.load_from_file_csv()
         self.asserEqual(str(s1), str(list_squares_output[0]))
 
     def test_load_from_file_csv_second_square(self):
-        s1 =  Square(5, 1, 3, 3)
-        s2 =  Square(9, 5, 2, 3)
+        s1 = Square(5, 1, 3, 3)
+        s2 = Square(9, 5, 2, 3)
         Square.save_to_file_csv([s1, s2])
-        list_squares_output =  Square.load_from_file_csv()
+        list_squares_output = Square.load_from_file_csv()
         self.asserEqual(str(s2), str(list_squares_output[1]))
 
     def test_load_from_file_csv_square_type(self):
-        s1 =  Square(5, 1, 3, 3)
-        s2 =  Square(9, 5, 2, 3)
+        s1 = Square(5, 1, 3, 3)
+        s2 = Square(9, 5, 2, 3)
         Square.save_to_file_csv([s1, s2])
-        output =  Square.load_from_file_csv()
+        output = Square.load_from_file_csv()
         self.asserTrue(all(type(obj) == Square for obj in output))
 
     def test_load_from_file_csv_no_file(self):

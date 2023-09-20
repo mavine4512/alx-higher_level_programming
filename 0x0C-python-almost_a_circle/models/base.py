@@ -25,7 +25,6 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
-
     @staticmethod
     def to_json_string(list_dictionaries):
         """Returnthe JSON serialization of a list of dicts.
@@ -42,7 +41,7 @@ class Base:
         Args:
             list_objs (list): A list of inherited Base instances.
         """
-        filename = cls.__name__ +".json"
+        filename = cls.__name__ + ".json"
         with open(filename, "w") as jsonfile:
             if list_objs is None:
                 jsonfile.write("[]")
@@ -67,11 +66,11 @@ class Base:
     def create(cls, **dictionary):
         """Return a class instantiated from a dictinary of attributes.
         Args:
-            **dictionary (dict): Key/value pairs of attributes to initializetion
+            **dictionary (dict): Key/value pairs of attributes to initialized
         """
         if dictionary and dictionary != {}:
             if cls.__name__ == "Rectangle":
-                new =  cls(1, 1)
+                new = cls(1, 1)
             else:
                 new = cls(1)
             new.update(**dictionary)
@@ -88,7 +87,7 @@ class Base:
         filename = str(cls.__name__) + ".json"
         try:
             with open(filename, "r") as jsonfile:
-                list_dicts =  Base. from_json_string(jsonfile.read())
+                list_dicts = Base. from_json_string(jsonfile.read())
                 return [cls.create(**d) for d in list_dicts]
         except IOError:
             return []
@@ -107,9 +106,9 @@ class Base:
                 if cls.__name__ == "Rectangle":
                     fieldanemes = ["id", "width", "height", "x", "y"]
                 else:
-                    fieldnames =  ["id", "size", "x", "y"]
-                writer =  csv.DictWriter(csvfile, fieldnames=fieldnames)
-                for obj  in list_objs:
+                    fieldnames = ["id", "size", "x", "y"]
+                writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+                for obj in list_objs:
                     writer.writerow(obj.to_dictionary())
 
     @classmethod
@@ -129,7 +128,7 @@ class Base:
                     fieldname = ["id", "size", "x", "y"]
                 list_dicts = csv.DictReader(csvfile, fieldnames=fieldnames)
                 list_dicts = [dict([k, int(v)] for k, v in d.items())
-                        for d in list_dicts]
+                              for d in list_dicts]
                 return [cls.create(**d) for d in list_dicts]
         except IOError:
             return []

@@ -185,7 +185,7 @@ class TestRectangle_width(unittest.TestCase):
 
 
 class TestRectangle_height(unittest.TestCase):
-    """unittest for testing initialization of the Rectangle height attribute."""
+    """unittest for testing initialized of the Rectangle height attribute."""
 
     def test_None_height(self):
         with self.assertRaisesRegex(TypeError, "height must be an integer"):
