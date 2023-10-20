@@ -3,7 +3,7 @@
 -- Results must be sorted in ascending order by the rating
 -- the database name will be passed as an argument of the MySQL command
 
-SELECT tv_shows.title, SUM(tv_show_rating.rate) AS rating
+SELECT tv_shows.title, SUM(tv_show_ratings.rate) AS rating
 FROM tv_shows
 INNER JOIN tv_show_ratings
 ON tv_shows.id = tv_show_ratings.show_id
