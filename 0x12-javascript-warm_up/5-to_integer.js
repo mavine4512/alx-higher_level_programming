@@ -7,8 +7,8 @@ const arg = process.argv[2];
 const intValue = parseInt(arg);
 
 //let check if the result is not NaN
-if (!isNaN(intValue)){
+if (!isNaN(intValue)) {
 	console.log(`My number: ${intValue}`);
-}else{
+} else {
 	console.log('Not a number');
 }
