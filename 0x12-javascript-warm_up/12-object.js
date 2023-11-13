@@ -5,7 +5,5 @@ const myObject = {
 };
 
 console.log(myObject);
-
-const updateObject = {...myObject, value:89 };
-
-console.log(updateObject);
+myObject.value = 89;
+console.log(myObject);
