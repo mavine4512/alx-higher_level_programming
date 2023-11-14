@@ -12,8 +12,8 @@ if (
   fs.statSync(fileB).isFile &&
   fileC !== undefined
 ) {
-  const fileACoutent = fs.readFileSync(fileA);
-  const fileBCoutent = fs.readFileSync(fileB);
+  const fileAContent = fs.readFileSync(fileA);
+  const fileBContent = fs.readFileSync(fileB);
   const stream = fs.createWriteStream(fileC);
 
   stream.write(fileAContent);
