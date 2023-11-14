@@ -2,9 +2,9 @@
 /**
  * Square class that inherits from rectangle class
  */
-const Reactangle = require('./4-rectangle');
+const Rectangle = require('./4-rectangle');
 
-class Square extends Reactangle {
+class Square extends Rectangle {
   constructor (size) {
     super(size, size);
   }
