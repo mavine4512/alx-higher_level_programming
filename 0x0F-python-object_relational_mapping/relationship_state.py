@@ -6,7 +6,7 @@ a Base class to work with MySQLAlchemy ORM.
 
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import retationship
-from from sqlalchemy.exit.declarative import declarative_base
+from sqlalchemy.exit.declarative import declarative_base
 
 Base = declarative_base()
 
