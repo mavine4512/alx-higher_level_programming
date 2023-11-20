@@ -5,8 +5,8 @@ from the db hbtn_0e_14_usa.
 """
 
 from sys import argv
-from relationship_state import State, Base
-from relationship_city import city
+from relationship_state import Base, State
+from relationship_city import City
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
