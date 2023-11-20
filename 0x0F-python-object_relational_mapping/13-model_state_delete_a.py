@@ -5,7 +5,7 @@ with a name containing the letter `a`
 from the db hbtn_0e_6_usa.
 """
 
-form sys import argv
+from sys import argv
 from model_state import State, Base
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker

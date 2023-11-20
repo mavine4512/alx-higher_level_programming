@@ -4,7 +4,7 @@ This script lists all state Objects
 from the db hbtn_0e_6_usa.
 """
 
-form sys import argv
+from sys import argv
 from model_state import State, Base
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -22,6 +22,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
 
     session = Session()
+
     state = session.query(State).order_by(State.id).first()
     if state is not None:
         print('{0}: {1}'.format(state.id, state.name))

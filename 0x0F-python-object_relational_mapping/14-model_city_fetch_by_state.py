@@ -4,7 +4,7 @@ This script prints all City Objects
 from the db hbtn_0e_6_usa.
 """
 
-form sys import argv
+from sys import argv
 from model_state import State, Base
 from model_city import City
 from sqlalchemy import create_engine
@@ -25,7 +25,7 @@ if __name__ == "__main__":
     session = Session()
 
     result = session.query(City, State).join(State)
-    
+
     for city, state in results.all():
         print("{}: ({}) {}".format(state.name, city.id, city.name))
 

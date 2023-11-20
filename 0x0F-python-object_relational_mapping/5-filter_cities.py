@@ -13,13 +13,15 @@ if __name__ == '__main__':
     Access to the  db and get the states
     from the db.
     """
-     db_connect = db.connect(host="localhost", port=3306,
+
+    db_connect = db.connect(host="localhost", port=3306,
                             user=argv[1], passwd=argv[2], db=argv[3])
-     with db_connect.cursor() as db_cursor:
-         db_cursor.execute("""
+
+    with db_connect.cursor() as db_cursor:
+        db_cursor.execute("""
             SELECT
                 cities.id, cities.name
-            From
+            FROM
                 cities
             JOIN
                 states
@@ -27,13 +29,12 @@ if __name__ == '__main__':
                 cities.state_id = states.id
             WHERE
                 states.name LIKE BINARY %(state_name)s
-            ORDER BY 
+            ORDER BY
                 cities.id ASC
          """, {
-             'state_name':argv[4]
+             'state_name': argv[4]
         })
-         row_selected = db_cursor.fetchall()
+        row_selected = db_cursor.fetchall()
 
     if rows_selected is not none:
         print(", ".join([row[1] for row in rows_selected]))
-
