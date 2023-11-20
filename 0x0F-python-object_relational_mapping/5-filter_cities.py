@@ -36,5 +36,5 @@ if __name__ == '__main__':
         })
         row_selected = db_cursor.fetchall()
 
-    if rows_selected is not none:
+    if row_selected is not None:
         print(", ".join([row[1] for row in rows_selected]))
