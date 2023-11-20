@@ -4,7 +4,7 @@ This script prints all city Object
 from the db hbtn_0e_14_usa.
 """
 
-form sys import argv
+from sys import argv
 from relationship_state import State, Base
 from relationship_city import city
 from sqlalchemy import create_engine
