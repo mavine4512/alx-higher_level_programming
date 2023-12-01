@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""send a POST request to a given URL with a geven email
+"Sends a POST request to a given URL with a given email.
 Usage: ./2-post_email.py <URL> <email>
     - Displays the body of the response.
 """
