@@ -11,6 +11,7 @@ request(url, (error, response, body) => {
     console.log(error);
     return;
   }
+
   const data = JSON.parse(body);
   characters = data.characters;
   getCharacters(0);
@@ -26,7 +27,6 @@ const getCharacters = (index) => {
       console.log(error);
       return;
     }
-
     const characterData = JSON.parse(body);
     console.log(characterData.name);
     getCharacters(index + 1);

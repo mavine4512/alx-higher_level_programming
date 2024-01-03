@@ -1,11 +1,11 @@
 #!/usr/bin/node
 
 const request = require('request');
-const fs = request('fs');
+const fs = require('fs');
 const url = process.argv[2];
 const file = process.argv[3];
 
-request.get(url, (error, response, body) => {
+request(url, (error, response, body) => {
   if (error) {
     console.log(error);
   } else {
